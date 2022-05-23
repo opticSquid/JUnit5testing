@@ -1,6 +1,8 @@
 package com.sb.unittesting.junit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -32,4 +34,23 @@ class StringHelperTest {
 		assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
 	}
 
+	@Test
+	public void areFirstAndLastTwoCharactersTheSame_noSameLetters() {
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+	}
+
+	@Test
+	public void areFirstAndLastTwoCharactersTheSame_SameLetters_AtStart_and_End() {
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+	}
+	
+	@Test
+	public void areFirstAndLastTwoCharactersTheSame_only2LetterWord() {
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
+	}
+	
+	@Test
+	public void areFirstAndLastTwoCharactersTheSame_SingleLetter() {
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
+	}
 }
