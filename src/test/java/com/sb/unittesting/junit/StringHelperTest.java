@@ -43,12 +43,12 @@ class StringHelperTest {
 	public void areFirstAndLastTwoCharactersTheSame_SameLetters_AtStart_and_End() {
 		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
 	}
-	
+
 	@Test
 	public void areFirstAndLastTwoCharactersTheSame_only2LetterWord() {
 		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
 	}
-	
+
 	@Test
 	public void areFirstAndLastTwoCharactersTheSame_SingleLetter() {
 		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
