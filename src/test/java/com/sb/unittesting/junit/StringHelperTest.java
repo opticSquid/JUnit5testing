@@ -1,15 +1,16 @@
 package com.sb.unittesting.junit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 class StringHelperTest {
 	// Test functions should always be public and void
+	private StringHelper helper = new StringHelper();
 
 	@Test
 	public void truncateAInFirst2Positions_doubleA_atStart() {
-		StringHelper helper = new StringHelper();
+
 		// assertEquals(expected,actual);
 		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
 
@@ -17,8 +18,18 @@ class StringHelperTest {
 
 	@Test
 	public void truncateAInFirst2Positions_singleA_atStart() {
-		StringHelper helper = new StringHelper();
+
 		assertEquals("CD", helper.truncateAInFirst2Positions("ACD"));
+	}
+
+	@Test
+	public void truncateAInFirst2Positions_noA_inWord() {
+		assertEquals("CDEF", helper.truncateAInFirst2Positions("CDEF"));
+	}
+
+	@Test
+	public void truncateAInFirst2Positions_doubleA_atEnd() {
+		assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
 	}
 
 }
