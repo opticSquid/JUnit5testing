@@ -3,6 +3,7 @@ package com.sb.unittesting.junit;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -27,7 +28,7 @@ class ArayCompare {
 	}
 
 	@Test
-	@Timeout(1)
+	@Timeout(value=26, unit=TimeUnit.MILLISECONDS)
 	public void testSort_Performance() {
 		// Default value of timeout in in seconds
 		int[] array = { 12, 23, 4 };
