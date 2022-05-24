@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 class ArayCompare {
 
@@ -25,4 +26,15 @@ class ArayCompare {
 		});
 	}
 
+	@Test
+	@Timeout(1)
+	public void testSort_Performance() {
+		// Default value of timeout in in seconds
+		int[] array = { 12, 23, 4 };
+		for (int i = 0; i < 1000000;i++) {
+			array[0] = i;
+			Arrays.sort(array);
+		}
+		
+	}
 }
